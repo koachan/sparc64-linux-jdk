@@ -19,5 +19,7 @@ In general, I'm using the following scheme to manage the keys:
 - Each major JDK version gets its own key.
 - The key for version X will be signed with the key for version X-1.
   (With the exception of JDK 11, since it's the first build I made)
+- Generally I'll try to post the keys in multiple places, to help with
+  distribution.
 
-(This is inspired by [OpenBSD's approach to signing[(https://www.openbsd.org/papers/bsdcan-signify.html))
+(This is inspired by [OpenBSD's approach to signing](https://www.openbsd.org/papers/bsdcan-signify.html))
