@@ -41,7 +41,8 @@ to it altogether.
 
 Unfortunately, it's very unlikely that I'd ever provide builds for version 8.
 Currently, I personally don't use OpenJDK 8, so there's little interest from
-my side to do it.
+my side to do it. I _might_ do one if I have the time to do it, but overall
+it's a lower-priority thing to do for me.
 
 ### What about OpenJDK 17?
 
