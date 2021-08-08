@@ -1,0 +1,16 @@
+--disable-warnings-as-errors
+--enable-libffi-bundling
+--enable-unlimited-crypto
+--with-libjpeg=bundled
+--with-giflib=bundled
+--with-libpng=bundled
+--with-lcms=bundled
+--with-zlib=bundled
+--with-debug-level=release
+--with-native-debug-symbols=external
+--with-jvm-features=zgc,shenandoahgc
+--with-vendor-name="Koakuma"
+--with-vendor-url="https://github.com/koachan/sparc64-linux-jdk"
+--with-vendor-bug-url="https://github.com/koachan/sparc64-linux-jdk/issues"
+--with-version-pre=""
+--with-version-opt=""
