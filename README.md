@@ -5,16 +5,12 @@ This is an unofficial OpenJDK LTS builds for Linux/sparc64, mostly provided as
 a bootstrap aid so that people can build their own flavor of OpenJDK.
 
 Currently, this is simply a snapshot of the JDK build that I personally use,
-which itself initially bootstrapped out of a Debian/sparc64 chroot.
+which itself initially bootstrapped out of a Debian/sparc64 chroot on a Gentoo
+host.
 
 ## Where to get it
 
-Currently it is hosted in IPFS in the following URL:
-
-[TBA]
-
-Alternatively, you can download it through HTTP by using an IPFS gateway.
-Some quick links: [TBA]
+Look at the [Releases](https://github.com/koachan/sparc64-linux-jdk/releases) page.
 
 ## How to use it
 
