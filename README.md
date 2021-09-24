@@ -40,26 +40,20 @@ Currently, I personally don't use OpenJDK 8, so there's little interest from
 my side to do it. I _might_ do one if I have the time to do it, but overall
 it's a lower-priority thing to do for me.
 
-### What about OpenJDK 17?
+### Why/how is this bootstrapped?
 
-This one's a bit complex. OpenJDK [removed](https://openjdk.java.net/jeps/381)
-SPARC-specific code back in version 15. Theoretically, we could build it in
-generic "Zero" mode, but I have no experience with it so I don't know if it is
-doable.
+This was originally a JDK from Debian chroot running on a Gentoo base.
+Since I want to get rid of the chroot, I tried to make builds that run natively
+on Gentoo, those are what I'm sharing here :)
 
-I'll try making a build once a GA release is available. Hopefully it
-succeeds and I can provide a build here :)
+## A note about OpenJDK 17 (and possibly, newer)
 
-### What is the bootstrap chain you did to make the releases?
+OpenJDK [removed](https://openjdk.java.net/jeps/381) SPARC-specific code back
+in version 15. Thankfully, it can still be built using the interpreter-only "Zero"
+configuration, but since the JIT compiler and SPARC-specific optimizations are gone,
+it obviously has lower performance than earlier versions :(
 
-Currently it is:
-
-_11 (Debian, chroot)_ -> 11 (Gentoo, native)
-
-(Italic indicates temporary builds)
-
-I'll update it as I publish newer versions.
-
+Still, it's better than nothing :)
 
 ## TODO
 
