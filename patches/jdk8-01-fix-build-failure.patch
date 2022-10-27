@@ -1,0 +1,47 @@
+# HG changeset patch
+# User glaubitz
+# Date 1568034856 -7200
+# Node ID 9fba708740d6a2666ad95173789b44a5c42b5547
+# Parent  8009a9c3625188c7adb6453b998bc7f91cac2391
+8230708: Hotspot fails to build on linux-sparc with gcc-9
+Reviewed-by: dholmes, phh
+
+diff -r 8009a9c36251 -r 9fba708740d6 hotspot/src/cpu/sparc/vm/nativeInst_sparc.hpp
+--- a/hotspot/src/cpu/sparc/vm/nativeInst_sparc.hpp	Wed Sep 04 13:07:15 2019 +0200
++++ b/hotspot/src/cpu/sparc/vm/nativeInst_sparc.hpp	Mon Sep 09 15:14:16 2019 +0200
+@@ -315,7 +315,7 @@
+ 
+ inline NativeCall* nativeCall_at(address instr);
+ inline NativeCall* nativeCall_overwriting_at(address instr,
+-                                             address destination);
++                                             address destination = NULL);
+ inline NativeCall* nativeCall_before(address return_address);
+ class NativeCall: public NativeInstruction {
+  public:
+@@ -344,7 +344,7 @@
+ 
+   // Creation
+   friend inline NativeCall* nativeCall_at(address instr);
+-  friend NativeCall* nativeCall_overwriting_at(address instr, address destination = NULL) {
++  friend NativeCall* nativeCall_overwriting_at(address instr, address destination) {
+     // insert a "blank" call:
+     NativeCall* call = (NativeCall*)instr;
+     call->set_long_at(0 * BytesPerInstWord, call_instruction(destination, instr));
+@@ -413,7 +413,7 @@
+ //      == sethi %hi54(addr), O7 ;  jumpl O7, %lo10(addr), O7 ;  <delay>
+ // That is, it is essentially the same as a NativeJump.
+ class NativeFarCall;
+-inline NativeFarCall* nativeFarCall_overwriting_at(address instr, address destination);
++inline NativeFarCall* nativeFarCall_overwriting_at(address instr, address destination = NULL);
+ inline NativeFarCall* nativeFarCall_at(address instr);
+ class NativeFarCall: public NativeInstruction {
+  public:
+@@ -452,7 +452,7 @@
+     return call;
+   }
+ 
+-  friend inline NativeFarCall* nativeFarCall_overwriting_at(address instr, address destination = NULL) {
++  friend inline NativeFarCall* nativeFarCall_overwriting_at(address instr, address destination) {
+     Unimplemented();
+     NativeFarCall* call = (NativeFarCall*)instr;
+     return call;
