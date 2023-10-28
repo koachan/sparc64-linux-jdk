@@ -1,5 +1,4 @@
 --disable-warnings-as-errors
---enable-libffi-bundling
 --enable-unlimited-crypto
 --with-libjpeg=bundled
 --with-giflib=bundled
@@ -14,3 +13,6 @@
 --with-vendor-bug-url="https://github.com/koachan/sparc64-linux-jdk/issues"
 --with-version-pre=""
 --with-version-opt=""
+--with-num-cores="`nproc`"
+--with-extra-cflags="-O3 -mtune=niagara"
+--with-extra-cxxflags="-O3 -mtune=niagara"
