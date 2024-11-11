@@ -14,5 +14,5 @@
 --with-version-pre=""
 --with-version-opt=""
 --with-num-cores="`nproc`"
---with-extra-cflags="-O2 -mtune=niagara -fno-align-functions -fno-align-jumps -fno-align-labels"
---with-extra-cxxflags="-O2 -mtune=niagara -fno-align-functions -fno-align-jumps -fno-align-labels"
+--with-extra-cflags="-O2 -mtune=niagara -fno-align-functions -fno-align-jumps -fno-align-labels -fno-semantic-interposition"
+--with-extra-cxxflags="-O2 -mtune=niagara -fno-align-functions -fno-align-jumps -fno-align-labels -fno-semantic-interposition"
